@@ -383,7 +383,6 @@ export default class QRScannerView extends Component {
         renderBottomMenuView:React.PropTypes.func,
         isShowScanBar:React.PropTypes.bool,
         bottomMenuStyle:React.PropTypes.object,
-        onScanResultReceived:React.PropTypes.func,
     };
 
     constructor(props) {
