@@ -16,7 +16,7 @@ import
     Image
 } from 'react-native';
 
-let isClosed = false;
+
 /**
  * 扫描界面遮罩
  * 单独写一个类，方便拷贝使用
@@ -45,6 +45,8 @@ class QRScannerRectView extends Component {
         hintTextPosition: 130,
         isShowScanBar:true
 	};
+
+	isClosed = false;
 	
     constructor(props) {
         super(props);
@@ -63,7 +65,7 @@ class QRScannerRectView extends Component {
 	}
 	
 	componentWillUnmount() {
-		isClosed = true;
+		this.isClosed = true;
 	}
 
     //获取背景颜色
@@ -350,7 +352,7 @@ class QRScannerRectView extends Component {
     }
 
     scannerLineMove() {
-		if (isClosed) {
+		if (this.isClosed) {
 			return;
 		}
         this.state.animatedValue.setValue(0);  //重置Rotate动画值为0
